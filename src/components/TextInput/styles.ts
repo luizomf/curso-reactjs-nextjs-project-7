@@ -61,9 +61,9 @@ export const InputWrapper = styled.div<Pick<TextInputProps, 'errorMessage'>>`
   `}
 `;
 
-export const Input = styled.input<
-  Pick<TextInputProps, 'errorMessage' | 'as' | 'type'>
->`
+type StyledInputType = Pick<TextInputProps, 'errorMessage' | 'as' | 'type'>;
+
+export const Input = styled.input<StyledInputType>`
   ${({ theme, errorMessage, as }) => css`
     border: 1px solid ${theme.colors.gray3};
     width: 100%;
@@ -98,6 +98,7 @@ export const Input = styled.input<
       font-size: ${theme.font.sizes.xsmall};
       color: ${theme.colors.white};
       background: ${theme.colors.primary};
+      filter: none;
 
       ${as === 'textarea' &&
       css`
