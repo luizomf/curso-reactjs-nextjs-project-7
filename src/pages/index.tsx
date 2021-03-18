@@ -1,5 +1,15 @@
-import { Home } from '../templates/Home';
+import { GetServerSideProps } from 'next';
 
 export default function Index() {
-  return <Home />;
+  return (
+    <h1>
+      <span>Olá mundo</span>
+    </h1>
+  );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+  };
+};
