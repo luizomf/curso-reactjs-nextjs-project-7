@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <h1>
       <span>Olá mundo </span>
-      <pre>{session && JSON.stringify(session)}</pre>
+      <pre>{session && JSON.stringify(session, null, 2)}</pre>
     </h1>
   );
 }
