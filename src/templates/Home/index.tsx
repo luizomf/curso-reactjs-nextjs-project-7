@@ -1,5 +1,5 @@
-import { CloneMe } from '../../components/CloneMe'
-import * as Styled from './styles'
+import { CloneMe } from '../../components/CloneMe';
+import * as Styled from './styles';
 
 export function Home() {
   return (
@@ -8,4 +8,3 @@ export function Home() {
     </Styled.Wrapper>
   );
 }
-
