@@ -51,7 +51,7 @@ export default NextAuth({
             email,
           };
         } catch (e) {
-          console.log(e);
+          // console.log(e);
           return null;
         }
       },
@@ -61,6 +61,7 @@ export default NextAuth({
     jwt: async (token: NextAuthSession, user: NextAuthSession) => {
       const isSignIn = !!user;
       const actualDateInSeconds = Math.floor(Date.now() / 1000);
+      // Tem que ser a mesma expiração do Strapi JWT
       const tokenExpirationInSeconds = Math.floor(7 * 24 * 60 * 60);
 
       if (isSignIn) {
@@ -80,11 +81,29 @@ export default NextAuth({
         if (!token?.expiration) return Promise.resolve({});
 
         if (actualDateInSeconds > token.expiration) return Promise.resolve({});
-
-        console.log('USUARIO LOGADO:', token);
       }
 
       return Promise.resolve(token);
+    },
+    session: async (session, token: NextAuthSession) => {
+      if (
+        !token?.jwt ||
+        !token?.id ||
+        !token?.expiration ||
+        !token?.email ||
+        !token?.name
+      ) {
+        return null;
+      }
+
+      session.accessToken = token.jwt;
+      session.user = {
+        id: token.id,
+        name: token.name,
+        email: token.email,
+      };
+
+      return { ...session };
     },
   },
 });
