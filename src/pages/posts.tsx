@@ -4,17 +4,12 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { Wrapper } from '../components/Wrapper';
+import { StrapiPost } from '../components/FormPost';
 import { gqlClient } from '../graphql/client';
 import { GQL_MUTATION_DELETE_POST } from '../graphql/mutations/post';
 import { GQL_QUERY_GET_POSTS } from '../graphql/queries/post';
 import { frontEndRedirect } from '../utils/front-end-redirect';
 import { serverSideRedirect } from '../utils/server-side-redirect';
-
-export type StrapiPost = {
-  id?: string;
-  title: string;
-  content: string;
-};
 
 export type PostsPageProps = {
   posts?: StrapiPost[];
