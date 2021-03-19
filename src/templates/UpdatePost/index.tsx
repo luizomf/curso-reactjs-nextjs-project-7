@@ -1,8 +1,8 @@
 import { useSession } from 'next-auth/client';
-import { gqlClient } from '../../../graphql/client';
-import { GQL_MUTATION_UPDATE_POST } from '../../../graphql/mutations/post';
-import { FormPost, StrapiPost } from '../../FormPost';
-import { Wrapper } from '../../Wrapper';
+import { gqlClient } from '../../graphql/client';
+import { GQL_MUTATION_UPDATE_POST } from '../../graphql/mutations/post';
+import { FormPost, StrapiPost } from '../../components/FormPost';
+import { Wrapper } from '../../components/Wrapper';
 
 export type UpdatePostTemplateProps = {
   post: StrapiPost;

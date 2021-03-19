@@ -1,14 +1,12 @@
 import { GetServerSideProps } from 'next';
-import { useSession } from 'next-auth/client';
-import { Wrapper } from '../components/Wrapper';
+import { PrivateComponent } from '../components/PrivateComponent';
+import { HomeTemplate } from '../templates/Home';
 
 export default function Index() {
-  const [session] = useSession();
-
   return (
-    <Wrapper>
-      <h1>Olá {session?.user?.name || 'ninguém'}</h1>
-    </Wrapper>
+    <PrivateComponent>
+      <HomeTemplate />
+    </PrivateComponent>
   );
 }
 
