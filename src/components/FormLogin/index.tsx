@@ -16,23 +16,13 @@ export const FormLogin = ({ errorMessage, onLogin }: FormLoginProps) => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    console.log(email, password);
-  }, [email, password]);
-
   const handleSubmit = async (event: React.FormEvent) => {
-    console.log('Enviado', new Date().toLocaleString('pt-br'));
-
     setLoading(true);
     event.preventDefault();
-
-    await new Promise((r) => setTimeout(r, 5000));
 
     if (onLogin) {
       await onLogin(email, password);
     }
-
-    console.log('TERMINOU', new Date().toLocaleString('pt-br'));
 
     setLoading(false);
   };
