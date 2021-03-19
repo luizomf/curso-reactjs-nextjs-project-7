@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Email } from '@styled-icons/material-outlined/Email';
 import { Password } from '@styled-icons/material-outlined/Password';
 
