@@ -16,7 +16,7 @@ export const PrivateComponent = ({ children }: PrivateComponentProps) => {
   if (typeof window !== 'undefined' && loading) return null;
 
   if (!session) {
-    return <p>Você não está autenticado</p>;
+    return null;
   }
 
   return children;
