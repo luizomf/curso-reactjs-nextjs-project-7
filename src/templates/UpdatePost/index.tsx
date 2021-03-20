@@ -29,6 +29,14 @@ export function UpdatePostTemplate({ post }: UpdatePostTemplateProps) {
     }
   };
 
+  if (!post) {
+    return (
+      <Wrapper>
+        <p>Post doest not exist</p>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
       <FormPost onSave={handleSave} post={post} />
