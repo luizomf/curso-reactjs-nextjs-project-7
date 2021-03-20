@@ -33,6 +33,9 @@ export const Menu = () => {
       <Link href="/create-post">
         <a>Create Post</a>
       </Link>
+      <Link href="/open-route">
+        <a>Open route</a>
+      </Link>
 
       {session ? (
         <a href="#" onClick={handleClick}>
