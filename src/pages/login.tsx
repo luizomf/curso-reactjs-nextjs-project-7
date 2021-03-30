@@ -10,10 +10,13 @@ export default function LoginPage() {
   const [error, setError] = useState('');
 
   const handleLogin = async (email: string, password: string) => {
+    const redirect = router.query?.redirect || '/';
+
     const response = await signIn('credentials', {
       email,
       password,
       redirect: false,
+      callbackUrl: redirect as string,
     });
 
     if (!response.ok) {
@@ -21,12 +24,12 @@ export default function LoginPage() {
       return;
     }
 
-    const redirect = router.query?.redirect || '/';
-    router.push(redirect as string);
+    window.location.href = response.url;
   };
 
   const handleLoginGoogle = async () => {
-    await signIn('google', { callbackUrl: '/' });
+    const redirect = router.query?.redirect || '/';
+    await signIn('google', { callbackUrl: redirect as string });
   };
   return (
     <Wrapper>
