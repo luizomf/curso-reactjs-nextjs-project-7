@@ -24,7 +24,9 @@ export default function LoginPage() {
       return;
     }
 
-    window.location.href = response.url;
+    if (typeof window !== 'undefined') {
+      window.location.href = response.url;
+    }
   };
 
   const handleLoginGoogle = async () => {
