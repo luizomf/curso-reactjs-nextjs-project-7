@@ -19,7 +19,7 @@ export const Menu = () => {
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    signOut({ redirect: false });
+    signOut({ redirect: true });
   };
 
   return (
