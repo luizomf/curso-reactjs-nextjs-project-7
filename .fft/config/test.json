@@ -1,0 +1,4 @@
+{
+  "templateFilePath": "./.fft/templates/react-test.hbs",
+  "outputFilePath": "./src/{{ root }}/{{ ordered.[0] }}/test.tsx"
+}

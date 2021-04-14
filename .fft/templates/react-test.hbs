@@ -1,0 +1,10 @@
+import { screen } from '@testing-library/react';
+import { renderTheme } from '../../styles/render-theme';
+import { {{ ordered.[0] }} } from '.';
+
+describe('<{{ ordered.[0] }} />', () => {
+  it('should render', () => {
+    renderTheme(<{{ ordered.[0] }}>Children</{{ ordered.[0] }}>);
+    expect(screen.getByRole('heading')).toBeInTheDocument();
+  });
+});

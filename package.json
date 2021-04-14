@@ -13,7 +13,9 @@
     "deploy-static": "npm run build && npm run export",
     "lint": "eslint src --max-warnings=0",
     "lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "fft:components": "npx files-from-template --config-files='.fft/config' --root='components'",
+    "fft:templates": "npx files-from-template --config-fWiles='.fft/config' --root='templates'"
   },
   "dependencies": {
     "@styled-icons/material-outlined": "^10.28.0",
